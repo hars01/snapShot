@@ -1,0 +1,23 @@
+{
+  "name": "snapshot",
+  "version": "1.0.0",
+  "description": "Capture Every Movement, Share & Celebrate Every Story...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hars01/snapShot.git"
+  },
+  "author": "Harsh Mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hars01/snapShot/issues"
+  },
+  "homepage": "https://github.com/hars01/snapShot#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.10.1"
+  }
+}
