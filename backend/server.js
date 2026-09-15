@@ -1,4 +1,5 @@
-require('dotenv').config();
+require('dotenv').config(); // eshke bina hum .env file ke keys aur value ko access nahi kar payenge
+
 const app = require('./src/app');
 const connectDB = require('./src/db/db');
 
