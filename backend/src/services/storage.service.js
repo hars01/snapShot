@@ -1,25 +1,24 @@
-const ImageKit = require("@imagekit/nodejs")
-
-
+const ImageKit = require('@imagekit/nodejs');
 
 const imagekit = new ImageKit({
-    // privateKey: "private_dypZh2Bhz09NkfT4A6dBaatL70Q="
-
-    privateKey: process.env['ImageKit_Private_Key']
+  privateKey: process.env.ImageKit_Private_Key,
+  publicKey: process.env.ImageKit_Public_Key,
+  urlEndpoint: process.env.ImageKit_Url_Endpoint,
 });
 
+async function uploadFile(buffer, fileName = 'snapshot-post.jpg') {
+  if (!buffer || !Buffer.isBuffer(buffer)) {
+    throw new Error('A valid image buffer is required.');
+  }
 
-// Image file ka buffer data ayse bhejna hai
-async function uploadFile(buffer) {
-    console.log("Buffer data:", buffer); // ye buffer data ko output karega
-    const result = await imagekit.files.upload({
-        file: buffer.toString("base64"),
-        fileName: "image.jpg"
-    })
+  const result = await imagekit.files.upload({
+    file: buffer.toString('base64'),
+    fileName,
+    useUniqueFileName: true,
+    folder: '/snapShot/posts',
+  });
 
-    return result;
+  return result;
 }
-
-
 
 module.exports = uploadFile;
